@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: ia_resume_db
+    environment:
+      POSTGRES_DB: resume_ia_db
+      POSTGRES_USER: lucas_dev
+      POSTGRES_PASSWORD: MuR8dzC14K
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+    driver: local
