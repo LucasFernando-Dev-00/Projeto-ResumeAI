@@ -2,7 +2,6 @@ package com.resumeai.resumeAI.auth;
 
 import com.resumeai.resumeAI.user.User;
 import com.resumeai.resumeAI.user.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
@@ -12,12 +11,12 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class CustomOAth2UserService extends DefaultOAuth2UserService {
+public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
 
     private final UserRepository userRepository;
 
-    public CustomOAth2UserService(UserRepository userRepository) {
+    public CustomOAuth2UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

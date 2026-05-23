@@ -5,7 +5,9 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.SecretKey;
 import java.security.Key;
+import java.security.PublicKey;
 import java.util.Date;
 
 @Service
@@ -26,12 +28,25 @@ public class JwtService {
                 .compact();
     }
 
-    public String extractEmail(String email) {
-
+    public String extractEmail(String token) {
+        return Jwts.parser()
+                .verifyWith((PublicKey) secretKey)          // no lugar de setSigningKey()
+                .build()
+                .parseSignedClaims(token)       // no lugar de parseClaimsJws()
+                .getPayload()                   // no lugar de getBody()
+                .getSubject();
     }
 
     public boolean isTokenValid(String token) {
-
+        try {
+            Jwts.parser()
+                    .verifyWith((SecretKey) secretKey)
+                    .build()
+                    .parseSignedClaims(token);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }
