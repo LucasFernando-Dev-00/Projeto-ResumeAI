@@ -1,5 +1,6 @@
 package com.resumeai.resumeAI.resume;
 
+import com.resumeai.resumeAI.exceptions.ResourceNotFoundException;
 import com.resumeai.resumeAI.user.User;
 import com.resumeai.resumeAI.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
