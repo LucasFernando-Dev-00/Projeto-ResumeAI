@@ -4,7 +4,6 @@ package com.resumeai.resumeAI.resume;
 import com.resumeai.resumeAI.analysis.Analysis;
 import com.resumeai.resumeAI.user.User;
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

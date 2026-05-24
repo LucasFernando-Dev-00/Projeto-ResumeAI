@@ -4,7 +4,6 @@ package com.resumeai.resumeAI.user;
 import com.resumeai.resumeAI.generation.GeneratedResume;
 import com.resumeai.resumeAI.resume.Resume;
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
 import java.util.List;

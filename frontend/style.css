@@ -1,0 +1,101 @@
+:root {
+    --bg-primary: #121214;
+    --bg-secondary: #202024;
+    --text-main: #e1e1e6;
+    --text-support: #8d8d99;
+    --brand-color: #00b37e;
+    --brand-hover: #00875f;
+    --danger: #f75a68;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+}
+
+/* LOGIN SCREEN */
+.login-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1, h2 { font-size: 2.5rem; margin-bottom: 10px; }
+h1 span, h2 span { color: var(--brand-color); }
+p { color: var(--text-support); margin-bottom: 30px; max-width: 450px; }
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    color: #121214;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.btn-google:hover { background-color: #e6e6e6; }
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--bg-secondary);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #323238;
+}
+
+/* DASHBOARD LAYOUT */
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    height: calc(100vh - 80px);
+}
+
+.panel {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 25px;
+    border: 1px solid #323238;
+}
+
+.actions-panel { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+.insight-panel { flex: 2; overflow-y: auto; display: flex; flex-direction: column; }
+
+hr { border: 0; border-top: 1px solid #323238; margin: 10px 0; }
+
+/* BOTÕES */
+.btn-primary, .btn-success, .btn-secondary {
+    width: 100%; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;
+}
+.btn-primary { background-color: var(--brand-color); color: #fff; }
+.btn-primary:hover:not(:disabled) { background-color: var(--brand-hover); }
+.btn-success { background-color: #00875f; color: #fff; }
+.btn-secondary { background-color: transparent; border: 1px solid var(--danger); color: var(--danger); width: auto; }
+.btn-secondary:hover { background-color: var(--danger); color: #fff; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* FILTRAGEM ZONA DE ARQUIVO */
+.file-drop-zone {
+    border: 2px dashed #4d4d57; padding: 30px; border-radius: 6px; text-align: center; margin-bottom: 15px; background: #121214;
+}
+.file-drop-zone input { width: 100%; }
+
+/* OUTPUT */
+.output-placeholder { color: var(--text-support); font-style: italic; margin-top: 15px; line-height: 1.6; }
+.hidden { display: none; }

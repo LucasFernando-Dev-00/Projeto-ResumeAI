@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
-import reactor.netty.http.server.HttpServerRequest;
+
 
 import java.io.IOException;
 
@@ -35,6 +35,7 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         String targetUrl = UriComponentsBuilder.fromUriString("http://localhost:5500/dashboard.html")
                 .queryParam("token", token)
                 .build().toUriString();
+
         getRedirectStrategy().sendRedirect((HttpServletRequest) request, response, targetUrl);
 
 

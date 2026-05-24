@@ -1,10 +1,8 @@
 package com.resumeai.resumeAI.generation;
 
 import com.resumeai.resumeAI.user.User;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -13,6 +11,8 @@ import java.util.Objects;
 @Table(name = "tb_generated_resumes")
 public class GeneratedResume {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String optimizedText;

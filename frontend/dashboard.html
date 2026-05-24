@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeAI - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <h2>Resume<span>AI</span> Dashboard</h2>
+    <button id="btnLogout" class="btn-secondary">Sair</button>
+</nav>
+
+<div class="dashboard-container">
+    <div class="panel actions-panel">
+        <h3>Passo 1: Enviar Currículo</h3>
+        <form id="uploadForm">
+            <div class="file-drop-zone">
+                <input type="file" id="fileInput" accept="application/pdf" required>
+                <p>Clique ou arraste o seu currículo em PDF aqui</p>
+            </div>
+            <button type="submit" id="btnUpload" class="btn-primary">Extrair Texto do PDF</button>
+        </form>
+
+        <hr>
+
+        <h3>Passo 2: Análise do Gemini</h3>
+        <button id="btnAnalyze" class="btn-primary" disabled>Analisar com Inteligência Artificial</button>
+
+        <hr>
+
+        <h3>Passo 3: Resultado Final</h3>
+        <button id="btnDownload" class="btn-success" disabled>Baixar Currículo Otimizado (PDF)</button>
+    </div>
+
+    <div class="panel insight-panel">
+        <h3>Relatório Técnico da IA</h3>
+        <div id="loadingSpinner" class="hidden">Analisando dados com o Gemini... Por favor, aguarde.</div>
+        <div id="insightOutput" class="output-placeholder">
+            O feedback detalhado do Gemini aparecerá aqui assim que a análise for concluída.
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

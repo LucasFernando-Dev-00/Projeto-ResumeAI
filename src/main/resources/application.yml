@@ -6,14 +6,14 @@ spring:
     google:
       genai:
         #NUNCA SUBIR ESTÁ CHAVE NO GITHUB
-        api-key: ==============
+        api-key:
         chat:
           options:
             model: gemini-1.5-flash
             max-tokens: 4096
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/resumeai_db
+    url: jdbc:postgresql://localhost:5432/resume_ia_db
     username: lucas_dev
     password: MuR8dzC14K
     driver-class-name: org.postgresql.Driver
@@ -24,7 +24,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -42,8 +42,8 @@ spring:
         registration:
           google:
             ##nunca subir estás informação no git hub
-            client-id: =============
-            client-secret: ==========================
+            client-id:
+            client-secret:
             scope:
               - email
               - profile
@@ -63,7 +63,7 @@ spring:
 
 jwt:
   #nunca subir está chave no git hub
-  secret: ========================
+  secret: 4a8f2c9d7e1b6043a5f8c2e9d4b7a1f63c8e2d9b5a7f4c1e8d3b6a9f2c5e8d1b
   expiration: 86400000
   refresh-expiration: 604800000
 
